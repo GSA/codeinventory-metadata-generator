@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Project Metadata Generator</title>
+
+  <link rel="stylesheet" href="/node_modules/uswds/dist/css/uswds.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="usa-grid">
+    <h1>Project Metadata Generator</h1>
+
+    <form id="form">
+      <label for="name">Project Name</label>
+      <input id="name" name="name" type="text">
+
+      <label for="description">Description</label>
+      <input id="description" name="description" type="text">
+
+      <label for="license">License</label>
+      <span class="usa-form-hint">The URL of the project license, if available.</span>
+      <input id="license" name="license" type="url">
+
+      <fieldset class="usa-fieldset-inputs">
+        <label for="openSourceProject">Is the project open source?</label>
+        <ul class="usa-unstyled-list">
+          <li>
+            <input type="radio" name="openSourceProject" value="0">
+            <label for="stanton">The project is not open source.</label>
+          </li>
+          <li>
+            <input type="radio" name="openSourceProject" value="1" checked>
+            <label for="anthony">The project is open source.</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="usa-fieldset-inputs">
+        <label for="openSourceProject">Is the project built for government-wide reuse?</label>
+        <ul class="usa-unstyled-list">
+          <li>
+            <input type="radio" name="governmentWideReuseProject" value="0">
+            <label for="stanton">The project is not built for government-wide reuse.</label>
+          </li>
+          <li>
+            <input type="radio" name="governmentWideReuseProject" value="1" checked>
+            <label for="anthony">The project is built for government-wide reuse.</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <label for="tags">Tags</label>
+      <span class="usa-form-hint">A list of keywords that identify the project.</span>
+      <input id="tags" name="tags" type="text">
+
+      <label for="contact[email]">Contact Email</label>
+      <input id="contact[email]" name="contact[email]" type="email">
+    </form>
+
+    <label for="result">Your JSON Metadata</label>
+    <textarea id="result" name="result" readonly="true"></textarea>
+  </div>
+
+  <script src="/node_modules/uswds/dist/js/uswds.min.js"></script>
+  <script src="/node_modules/form_to_object/dist/formToObject.min.js"></script>
+  <script src="/generator.js"></script>
+</body>
+</html>
