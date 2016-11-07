@@ -6,4 +6,9 @@ $(document).ready(function() {
     $("#result").val(JSON.stringify(metadata, null, 2));
   }
   updateResult();
+
+  $("#tags").select2({
+    tags: true,
+    tokenSeparators: [',', ' ']
+  });
 });
