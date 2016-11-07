@@ -7,8 +7,10 @@ $(document).ready(function() {
   }
   updateResult();
 
+  $.fn.select2.defaults.set("theme", "bootstrap");
   $("#tags").select2({
     tags: true,
+    width: null,
     tokenSeparators: [',', ' ']
   });
 });

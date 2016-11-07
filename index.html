@@ -7,68 +7,87 @@
 
   <title>Project Metadata Generator</title>
 
-  <link rel="stylesheet" href="/node_modules/uswds/dist/css/uswds.min.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/node_modules/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="/node_modules/select2-bootstrap-theme/dist/select2-bootstrap.min.css">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="usa-grid">
+  <div class="container">
     <h1>Project Metadata Generator</h1>
 
     <form id="form">
-      <label for="name">Project Name</label>
-      <input id="name" name="name" type="text">
 
-      <label for="description">Description</label>
-      <input id="description" name="description" type="text">
+      <div class="form-group">
+        <label for="name">Project Name</label>
+        <input class="form-control" id="name" name="name" type="text">
+      </div>
 
-      <label for="license">License</label>
-      <span class="usa-form-hint">The URL of the project license, if available.</span>
-      <input id="license" name="license" type="url">
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input class="form-control" id="description" name="description" type="text">
+      </div>
 
-      <fieldset class="usa-fieldset-inputs">
-        <label for="openSourceProject">Is the project open source?</label>
-        <ul class="usa-unstyled-list">
-          <li>
-            <input type="radio" name="openSourceProject" value="0">
-            <label for="stanton">The project is <strong>not</strong> open source.</label>
-          </li>
-          <li>
+      <div class="form-group">
+        <label for="license">License</label>
+        <input class="form-control" id="license" name="license" type="url">
+        <small class="form-text text-muted">The URL of the project license, if available.</small>
+      </div>
+
+      <fieldset class="form-group">
+        <p><b>Is the project open source?</b></p>
+        <div class="radio">
+          <label>
             <input type="radio" name="openSourceProject" value="1" checked>
-            <label for="anthony">The project is open source.</label>
-          </li>
-        </ul>
+            The project is open source.
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="openSourceProject" value="0">
+            The project is <strong>not</strong> open source.
+          </label>
+        </div>
       </fieldset>
 
-      <fieldset class="usa-fieldset-inputs">
-        <label for="openSourceProject">Is the project built for government-wide reuse?</label>
-        <ul class="usa-unstyled-list">
-          <li>
-            <input type="radio" name="governmentWideReuseProject" value="0">
-            <label for="stanton">The project is <strong>not</strong> built for government-wide reuse.</label>
-          </li>
-          <li>
+      <fieldset class="form-group">
+        <p><b>Is the project built for government-wide reuse?</b></p>
+        <div class="radio">
+          <label>
             <input type="radio" name="governmentWideReuseProject" value="1" checked>
-            <label for="anthony">The project is built for government-wide reuse.</label>
-          </li>
-        </ul>
+            The project is built for government-wide reuse.
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="governmentWideReuseProject" value="0">
+            The project is <strong>not</strong> built for government-wide reuse.
+          </label>
+        </div>
       </fieldset>
 
-      <label for="tags">Tags</label>
-      <span class="usa-form-hint">A list of keywords that identify the project.</span>
-      <select id="tags" name="tags" multiple></select>
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <select id="tags" name="tags" multiple></select>
+        <small class="form-text text-muted">A list of keywords that identify the project.</small>
+      </div>
 
-      <label for="contact[email]">Contact Email</label>
-      <input id="contact[email]" name="contact[email]" type="email">
+      <div class="form-group">
+        <label for="contact[email]">Contact Email</label>
+        <input class="form-control" id="contact[email]" name="contact[email]" type="email">
+      </div>
+
     </form>
 
-    <label for="result">Your JSON Metadata</label>
-    <textarea id="result" name="result" readonly="true"></textarea>
+    <div class="form-group">
+      <label for="result">Your JSON Metadata</label>
+      <textarea class="form-control" rows="20" id="result" name="result" readonly="true"></textarea>
+    </div>
   </div>
 
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/node_modules/select2/dist/js/select2.full.min.js"></script>
-  <script src="/node_modules/uswds/dist/js/uswds.min.js"></script>
   <script src="/node_modules/form_to_object/dist/formToObject.min.js"></script>
   <script src="/generator.js"></script>
 </body>
