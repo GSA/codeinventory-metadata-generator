@@ -3,3 +3,7 @@ textarea {
   font-size: smaller;
   font-family: monospace;
 }
+
+hr {
+  margin: 2em 0;
+}
