@@ -3,7 +3,8 @@ $(document).ready(function() {
   $("#form").on("change", updateResult);
   function updateResult(event) {
     var metadata = formToObject("form", { includeEmptyValuedElements: true });
-    $("#result").val(JSON.stringify(metadata, null, 2));
+    $("#json-result").val(JSON.stringify(metadata, null, 2));
+    $("#yaml-result").val(YAML.dump(metadata));
   }
   updateResult();
 

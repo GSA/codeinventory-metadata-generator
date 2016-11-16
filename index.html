@@ -14,81 +14,93 @@
 </head>
 <body>
   <div class="container">
-    <h1>Project Metadata Generator</h1>
+    <div class="col-xs-12">
+      <h1>Project Metadata Generator</h1>
 
-    <form id="form">
+      <form id="form">
 
-      <div class="form-group">
-        <label for="name">Project Name</label>
-        <input class="form-control" id="name" name="name" type="text">
-      </div>
-
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input class="form-control" id="description" name="description" type="text">
-      </div>
-
-      <div class="form-group">
-        <label for="license">License</label>
-        <input class="form-control" id="license" name="license" type="url" value="http://www.usa.gov/publicdomain/label/1.0/">
-        <small class="form-text text-muted">The URL of the project license, if available.</small>
-      </div>
-
-      <fieldset class="form-group">
-        <p><b>Is the project open source?</b></p>
-        <div class="radio">
-          <label>
-            <input type="radio" name="openSourceProject" value="1" checked>
-            The project is open source.
-          </label>
+        <div class="form-group">
+          <label for="name">Project Name</label>
+          <input class="form-control" id="name" name="name" type="text">
         </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="openSourceProject" value="0">
-            The project is <strong>not</strong> open source.
-          </label>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="description" name="description" type="text">
         </div>
-      </fieldset>
 
-      <fieldset class="form-group">
-        <p><b>Is the project built for government-wide reuse?</b></p>
-        <div class="radio">
-          <label>
-            <input type="radio" name="governmentWideReuseProject" value="1" checked>
-            The project is built for government-wide reuse.
-          </label>
+        <div class="form-group">
+          <label for="license">License</label>
+          <input class="form-control" id="license" name="license" type="url" value="http://www.usa.gov/publicdomain/label/1.0/">
+          <small class="form-text text-muted">The URL of the project license, if available.</small>
         </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="governmentWideReuseProject" value="0">
-            The project is <strong>not</strong> built for government-wide reuse.
-          </label>
+
+        <fieldset class="form-group">
+          <p><b>Is the project open source?</b></p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="openSourceProject" value="1" checked>
+              The project is open source.
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="openSourceProject" value="0">
+              The project is <strong>not</strong> open source.
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <p><b>Is the project built for government-wide reuse?</b></p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="governmentWideReuseProject" value="1" checked>
+              The project is built for government-wide reuse.
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="governmentWideReuseProject" value="0">
+              The project is <strong>not</strong> built for government-wide reuse.
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="tags">Tags</label>
+          <select id="tags" name="tags" multiple></select>
+          <small class="form-text text-muted">A list of keywords that identify the project.</small>
         </div>
-      </fieldset>
 
-      <div class="form-group">
-        <label for="tags">Tags</label>
-        <select id="tags" name="tags" multiple></select>
-        <small class="form-text text-muted">A list of keywords that identify the project.</small>
-      </div>
+        <div class="form-group">
+          <label for="contact[email]">Contact Email</label>
+          <input class="form-control" id="contact[email]" name="contact[email]" type="email">
+        </div>
 
-      <div class="form-group">
-        <label for="contact[email]">Contact Email</label>
-        <input class="form-control" id="contact[email]" name="contact[email]" type="email">
-      </div>
-
-    </form>
-
-    <div class="form-group">
-      <label for="result">Your JSON Metadata</label>
-      <textarea class="form-control" rows="20" id="result" name="result" readonly="true"></textarea>
+      </form>
     </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="yaml-result">Your YAML Metadata</label>
+        <textarea class="form-control" rows="20" id="yaml-result" readonly="true"></textarea>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="json-result">Your JSON Metadata</label>
+        <textarea class="form-control" rows="20" id="json-result" readonly="true"></textarea>
+      </div>
+    </div>
+
   </div>
 
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/node_modules/select2/dist/js/select2.full.min.js"></script>
   <script src="/node_modules/form_to_object/dist/formToObject.min.js"></script>
+  <script src="/node_modules/yamljs/dist/yaml.min.js"></script>
   <script src="/generator.js"></script>
 </body>
 </html>
