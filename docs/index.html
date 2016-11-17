@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CodeInventory Metadata Generator</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="css/select2-bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="col-xs-12">
+      <h1>CodeInventory Metadata Generator</h1>
+
+      <form id="form">
+
+        <div class="form-group">
+          <label for="name">Project Name</label>
+          <input class="form-control" id="name" name="name" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" id="description" name="description" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="license">License</label>
+          <input class="form-control" id="license" name="license" type="url" value="http://www.usa.gov/publicdomain/label/1.0/">
+          <small class="form-text text-muted">The URL of the project license, if available.</small>
+        </div>
+
+        <fieldset class="form-group">
+          <p><b>Is the project open source?</b></p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="openSourceProject" value="1" checked>
+              The project is open source.
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="openSourceProject" value="0">
+              The project is <strong>not</strong> open source.
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <p><b>Is the project built for government-wide reuse?</b></p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="governmentWideReuseProject" value="1" checked>
+              The project is built for government-wide reuse.
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="governmentWideReuseProject" value="0">
+              The project is <strong>not</strong> built for government-wide reuse.
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="tags">Tags</label>
+          <select id="tags" name="tags" multiple></select>
+          <small class="form-text text-muted">A list of keywords that identify the project.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="contact[email]">Contact Email</label>
+          <input class="form-control" id="contact[email]" name="contact[email]" type="email">
+        </div>
+
+      </form>
+      <hr>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="yaml-result">Your YAML Metadata</label> (<a href="#" class="download" data-format="yaml" download=".codeinventory.yml">Download</a>)
+        <textarea class="form-control" rows="20" id="yaml-result" readonly></textarea>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="json-result">Your JSON Metadata</label> (<a href="#" class="download" data-format="json" download=".codeinventory.json">Download</a>)
+        <textarea class="form-control" rows="20" id="json-result" readonly></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/select2.full.min.js"></script>
+  <script src="js/formToObject.min.js"></script>
+  <script src="js/yaml.min.js"></script>
+  <script src="js/FileSaver.min.js"></script>
+  <script src="js/generator.js"></script>
+</body>
+</html>

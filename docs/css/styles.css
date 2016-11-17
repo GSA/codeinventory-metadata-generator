@@ -1,0 +1,9 @@
+textarea {
+  height: 32rem;
+  font-size: smaller;
+  font-family: monospace;
+}
+
+hr {
+  margin: 2em 0;
+}
