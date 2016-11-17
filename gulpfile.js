@@ -43,7 +43,7 @@ gulp.task("watch-dev", function () {
     var css = gulp.src(cssFiles).pipe(changed(devPath + cssPath)).pipe(gulp.dest(devPath + cssPath)).pipe(browserSync.stream());
     var js = gulp.src(jsFiles).pipe(changed(devPath + jsPath)).pipe(gulp.dest(devPath + jsPath)).pipe(browserSync.stream());
     var fonts = gulp.src(fontFiles).pipe(changed(devPath + fontPath)).pipe(gulp.dest(devPath + fontPath)).pipe(browserSync.stream());
-    var site = gulp.src(siteFiles).pipe(changed(devPath)).pipe(gulp["build-dev"].dest(devPath)).pipe(browserSync.stream());
+    var site = gulp.src(siteFiles).pipe(changed(devPath)).pipe(gulp.dest(devPath)).pipe(browserSync.stream());
     return stream(css, js, fonts, site);
   });
 });
