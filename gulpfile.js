@@ -13,7 +13,6 @@ var cssFiles = [
   "node_modules/bootstrap/dist/css/bootstrap.min.css",
   "node_modules/select2/dist/css/select2.min.css",
   "node_modules/select2-bootstrap-theme/dist/select2-bootstrap.min.css",
-  "styles.css"
 ];
 
 var jsFiles = [
@@ -23,16 +22,13 @@ var jsFiles = [
   "node_modules/form_to_object/dist/formToObject.min.js",
   "node_modules/yamljs/dist/yaml.min.js",
   "node_modules/file-saver/FileSaver.min.js",
-  "generator.js"
 ];
 
 var fontFiles = [
   "node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.*"
 ];
 
-var siteFiles = [
-  "*.html"
-];
+var siteFiles = [ "src/**", "src/.*" ];
 
 gulp.task("build", function () {
   var css = gulp.src(cssFiles).pipe(gulp.dest(distPath + cssPath));
