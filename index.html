@@ -84,13 +84,13 @@
 
     <div class="col-md-6">
       <div class="form-group">
-        <label for="yaml-result">Your YAML Metadata (.codeinventory.yml)</label>
+        <label for="yaml-result">Your YAML Metadata</label> (<a href="#" class="download" data-format="yaml" download=".codeinventory.yml">Download</a>)
         <textarea class="form-control" rows="20" id="yaml-result" readonly></textarea>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label for="json-result">Your JSON Metadata (.codeinventory.json)</label>
+        <label for="json-result">Your JSON Metadata</label> (<a href="#" class="download" data-format="json" download=".codeinventory.json">Download</a>)
         <textarea class="form-control" rows="20" id="json-result" readonly></textarea>
       </div>
     </div>
@@ -102,6 +102,7 @@
   <script src="/node_modules/select2/dist/js/select2.full.min.js"></script>
   <script src="/node_modules/form_to_object/dist/formToObject.min.js"></script>
   <script src="/node_modules/yamljs/dist/yaml.min.js"></script>
+  <script src="/node_modules/file-saver/FileSaver.min.js"></script>
   <script src="/generator.js"></script>
 </body>
 </html>

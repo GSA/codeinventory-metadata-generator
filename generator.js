@@ -8,6 +8,14 @@ $(document).ready(function() {
   }
   updateResult();
 
+  $(".download").click(function (event) {
+    event.preventDefault();
+    var format = $(this).data("format");
+    var content = $("#" + format + "-result").val();
+    var data = new Blob([content], { type: "text/plain;charset=utf-8" });
+    saveAs(data, $(this).attr("download"));
+  });
+
   $.fn.select2.defaults.set("theme", "bootstrap");
   $("#tags").select2({
     tags: true,
