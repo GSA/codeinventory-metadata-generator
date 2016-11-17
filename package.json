@@ -1,15 +1,15 @@
 {
-  "name": "project-metadata-generator",
+  "name": "codeinventory-metadata-generator",
   "version": "0.1.0",
   "scripts": {
     "dev": "lite-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jfredrickson5/project-metadata-generator.git"
+    "url": "git+https://github.com/jfredrickson5/codeinventory-metadata-generator.git"
   },
   "license": "CC0-1.0",
-  "homepage": "https://github.com/jfredrickson5/project-metadata-generator",
+  "homepage": "https://github.com/jfredrickson5/codeinventory-metadata-generator",
   "devDependencies": {
     "lite-server": "^2.2.2"
   },
