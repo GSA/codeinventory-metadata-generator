@@ -1,12 +1,20 @@
 $(document).ready(function() {
-  $("#form").on("keyup", updateResult);
-  $("#form").on("change", updateResult);
-  function updateResult(event) {
+  function parseForm() {
     var metadata = formToObject("form", { includeEmptyValuedElements: true });
+    metadata.openSourceProject = parseInt(metadata.openSourceProject);
+    metadata.governmentWideReuseProject = parseInt(metadata.governmentWideReuseProject);
+    metadata.license = metadata.license == "" ? null : metadata.license;
+    return metadata;
+  }
+
+  function updateResult(event) {
+    var metadata = parseForm();
     $("#json-result").val(JSON.stringify(metadata, null, 2));
     $("#yaml-result").val(YAML.dump(metadata));
   }
-  updateResult();
+
+  $("#form").on("keyup", updateResult);
+  $("#form").on("change", updateResult);
 
   $(".download").click(function (event) {
     event.preventDefault();
