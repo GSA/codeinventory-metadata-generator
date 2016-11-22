@@ -3,6 +3,7 @@ $(document).ready(function() {
     var metadata = formToObject("form", { includeEmptyValuedElements: true });
     metadata.openSourceProject = parseInt(metadata.openSourceProject);
     metadata.governmentWideReuseProject = parseInt(metadata.governmentWideReuseProject);
+    metadata.license = metadata.license == "" ? null : metadata.license;
     return metadata;
   }
 
