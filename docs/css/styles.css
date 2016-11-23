@@ -7,3 +7,7 @@ textarea {
 hr {
   margin: 2em 0;
 }
+
+.select2-results {
+  display: none;
+}
