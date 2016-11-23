@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CodeInventory Metadata",
+  "description": "A specification for the .codeinventory.json (and .codeinventory.yml) files used by CodeInventory.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The project name.",
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "description": "A description of the project.",
+      "type": "string",
+      "minLength": 1
+    },
+    "license": {
+      "description": "The URL of the project license, if available. If unavailable, null.",
+      "type": [ "string", "null" ],
+      "format": "uri"
+    },
+    "openSourceProject": {
+      "description": "A value indicating whether or not the project is open source.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "governmentWideReuseProject": {
+      "description": "A value indicating whether or not the project is built for government-wide reuse.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "tags": {
+      "description": "A list of string alphanumeric keywords that identify the project.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "contact": {
+      "description": "Information about contacting the project.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "description": "An email address to contact the project.",
+          "type": "string",
+          "format": "email"
+        }
+      },
+      "required": [
+        "email"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "license",
+    "openSourceProject",
+    "governmentWideReuseProject",
+    "tags",
+    "contact"
+  ]
+}

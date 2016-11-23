@@ -22,6 +22,7 @@ var jsFiles = [
   "node_modules/form_to_object/dist/formToObject.min.js",
   "node_modules/yamljs/dist/yaml.min.js",
   "node_modules/file-saver/FileSaver.min.js",
+  "node_modules/ajv/dist/ajv.min.js"
 ];
 
 var fontFiles = [

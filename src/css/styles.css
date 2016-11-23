@@ -11,3 +11,7 @@ hr {
 .select2-results {
   display: none;
 }
+
+#validation {
+  display: none;
+}

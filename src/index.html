@@ -86,6 +86,13 @@
       <hr>
     </div>
 
+    <div class="col-xs-12" id="validation">
+      <div class="alert alert-danger">
+        <p>Your metadata is not yet valid. Please complete the form:</p>
+        <ul></ul>
+      </div>
+    </div>
+
     <div class="col-md-6">
       <div class="form-group">
         <label for="yaml-result">Your YAML Metadata</label> (<a href="#" class="download" data-format="yaml" download=".codeinventory.yml">Download</a>)
@@ -107,6 +114,7 @@
   <script src="js/formToObject.min.js"></script>
   <script src="js/yaml.min.js"></script>
   <script src="js/FileSaver.min.js"></script>
+  <script src="js/ajv.min.js"></script>
   <script src="js/generator.js"></script>
 </body>
 </html>
