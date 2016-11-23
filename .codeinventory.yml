@@ -1,0 +1,10 @@
+name: 'CodeInventory Metadata Generator'
+description: 'Generates project metadata files that can be used to build an organization-wide code inventory.'
+license: null
+openSourceProject: 1
+governmentWideReuseProject: 1
+tags:
+    - open-source
+    - code.gov
+contact:
+    email: cto@gsa.gov
